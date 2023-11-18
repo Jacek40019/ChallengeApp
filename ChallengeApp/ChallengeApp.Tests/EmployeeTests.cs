@@ -1,61 +1,58 @@
 namespace ChallengeApp.Tests
 {
-    public class Tests
+    public class EmployeeTests
     {
         [Test]
-        public void WhenEmployeeCollectJustPositiveScores_ShouldReturnCorrectSumAsResult()
+        public void WhenGetStatisticColled_ShouldReturnCorrectMax()
         {
             // arrange
-            // varables: name (string), surname (string), age (int)
-            var employee = new Employee("Franek", "Kimono", 37);
-            employee.Addscores(5);
-            employee.Addscores(6);
-            employee.Addscores(9);
-            employee.Addscores(2);
+            var employee = new Employee("Lee", "Wong");
+            employee.AddGrade(5);
+            employee.AddGrade(1);
+            employee.AddGrade(9);
 
             // act
-            var result = employee.Result;
+            var statistics = employee.GetStatistic();
 
             //assert
-            Assert.AreEqual(22, result);
+            Assert.AreEqual(9, statistics.Max);
+
+        }
+
+        [Test]
+        public void WhenGetStatisticColled_ShouldReturnCorrectMin()
+        {
+            // arrange
+            var employee = new Employee("Lee", "Wong");
+            employee.AddGrade(5);
+            employee.AddGrade(1);
+            employee.AddGrade(9);
+
+
+            // act
+            var statistics = employee.GetStatistic();
+
+            //assert
+            Assert.AreEqual(1, statistics.Min);
 
 
         }
 
         [Test]
-        public void WhenEmployeeCollectPositiveAndNegativeScores_ShouldReturnCorrectSumAsResult()
+        public void WhenGetStatisticColled_ShouldReturnCorrectAverage()
         {
             // arrange
-            // varables: name (string), surname (string), age (int)
-            var employee = new Employee("Franek", "Kimono", 37);
-            employee.Addscores(1);
-            employee.Addscores(-2);
-            employee.Addscores(8);
-            employee.Addscores(-6);
+            var employee = new Employee("Lee", "Wong");
+            employee.AddGrade(5);
+            employee.AddGrade(1);
+            employee.AddGrade(9);
+
 
             // act
-            var result = employee.Result;
+            var statistics = employee.GetStatistic();
 
             //assert
-            Assert.AreEqual(1, result);
-
-
-        }
-        [Test]
-        public void WhenEmployeeCollectJustNegativeScores_ShouldReturnCorrectSumAsResult()
-        {
-            // arrange
-            // varables: name (string), surname (string), age (int)
-            var employee = new Employee("Franek", "Kimono", 37);
-            employee.Addscores(-9);
-            employee.Addscores(-2);
-            employee.Addscores(-1);
-
-            // act
-            var result = employee.Result;
-
-            //assert
-            Assert.AreEqual(-12, result);
+            Assert.AreEqual((5 + 1 + 9) / 3, statistics.Average);
 
 
         }

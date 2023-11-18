@@ -1,4 +1,6 @@
-﻿namespace ChallengeApp.Tests
+﻿using System.Xml.Linq;
+
+namespace ChallengeApp.Tests
 {
     public class TypeTests
     {
@@ -7,8 +9,8 @@
         public void TwoObjectsOfTheSameClassHaveDifferentReferences_ShouldBeNotEqual()
         {
             // arrange
-            var employee1 = GetEmployee("Adam");
-            var employee2 = GetEmployee("Adam");
+            var employee1 = GetEmployee("Lee", "Wong");
+            var employee2 = GetEmployee("Lee", "Wong");
 
             // act
 
@@ -16,9 +18,9 @@
             Assert.AreNotEqual(employee1, employee2);
 
         }
-        private Employee GetEmployee(string name)
+       private Employee GetEmployee(string name, string surname)
         {
-            return new Employee(name);
+            return new Employee(name, surname);
         }
 
         [Test]
@@ -26,8 +28,8 @@
         public void TwoTheSameStringsFromDifferentObjects_ShouldBeEqual()
         {
             // arrange
-            var employee1 = GetEmployee1("Adam");
-            var employee2 = GetEmployee1("Adam");
+            var employee1 = GetEmployee1("Lee", "Wong");
+            var employee2 = GetEmployee1("Lee", "Wong");
 
             // act
 
@@ -35,9 +37,9 @@
             Assert.AreEqual(employee1.Name, employee2.Name);
 
         }
-        private Employee GetEmployee1(string name)
+        private Employee GetEmployee1(string  name, string surname)
         {
-            return new Employee(name);
+            return new Employee(name, surname);
         }
 
         [Test]
