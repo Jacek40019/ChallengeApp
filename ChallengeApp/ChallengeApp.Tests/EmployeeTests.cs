@@ -46,8 +46,8 @@ namespace ChallengeApp.Tests
             employee.AddGrade(5);
             employee.AddGrade(1);
             employee.AddGrade(9);
-            employee.AddGrade('B');
-            employee.AddGrade('f');
+            employee.AddGrade("B");
+            employee.AddGrade("f");
 
 
             // act
@@ -63,12 +63,12 @@ namespace ChallengeApp.Tests
         {
             // arrange
             var employee = new Employee("Lee", "Wong");
-            employee.AddGrade('A');
-            employee.AddGrade('b');
-            employee.AddGrade('C');
-            employee.AddGrade('D');
-            employee.AddGrade('e');
-            employee.AddGrade('f');
+            employee.AddGrade("A");
+            employee.AddGrade("b");
+            employee.AddGrade("c");
+            employee.AddGrade("D");
+            employee.AddGrade("e");
+            employee.AddGrade("f");
 
             // act
             var statistics = employee.GetStatistic();
@@ -83,12 +83,12 @@ namespace ChallengeApp.Tests
         {
             // arrange
             var employee = new Employee("Lee", "Wong");
-            employee.AddGrade('A');
-            employee.AddGrade('b');
-            employee.AddGrade('C');
-            employee.AddGrade('D');
-            employee.AddGrade('e');
-            employee.AddGrade('f');
+            employee.AddGrade("A");
+            employee.AddGrade("b");
+            employee.AddGrade("c");
+            employee.AddGrade("D");
+            employee.AddGrade("e");
+            employee.AddGrade("f");
 
             // act
             var statistics = employee.GetStatistic();
