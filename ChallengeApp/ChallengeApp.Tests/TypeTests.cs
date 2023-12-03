@@ -9,8 +9,8 @@ namespace ChallengeApp.Tests
         public void TwoObjectsOfTheSameClassHaveDifferentReferences_ShouldBeNotEqual()
         {
             // arrange
-            var employee1 = GetEmployee("Lee", "Wong");
-            var employee2 = GetEmployee("Lee", "Wong");
+            var employee1 = GetEmployee("Lee", "Wong", 27);
+            var employee2 = GetEmployee("Lee", "Wong", 27);
 
             // act
 
@@ -18,9 +18,9 @@ namespace ChallengeApp.Tests
             Assert.AreNotEqual(employee1, employee2);
 
         }
-       private Employee GetEmployee(string name, string surname)
+       private Employee GetEmployee(string name, string surname, int age)
         {
-            return new Employee(name, surname);
+            return new Employee(name, surname,age);
         }
 
         [Test]
@@ -28,8 +28,8 @@ namespace ChallengeApp.Tests
         public void TwoTheSameStringsFromDifferentObjects_ShouldBeEqual()
         {
             // arrange
-            var employee1 = GetEmployee1("Lee", "Wong");
-            var employee2 = GetEmployee1("Lee", "Wong");
+            var employee1 = GetEmployee1("Lee", "Wong", 27);
+            var employee2 = GetEmployee1("Lee", "Wong", 27);
 
             // act
 
@@ -37,9 +37,9 @@ namespace ChallengeApp.Tests
             Assert.AreEqual(employee1.Name, employee2.Name);
 
         }
-        private Employee GetEmployee1(string  name, string surname)
+        private Employee GetEmployee1(string  name, string surname, int age)
         {
-            return new Employee(name, surname);
+            return new Employee(name, surname, age);
         }
 
         [Test]
