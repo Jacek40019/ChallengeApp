@@ -1,6 +1,4 @@
-﻿using System.Xml.Linq;
-
-namespace ChallengeApp.Tests
+﻿namespace ChallengeApp.Tests
 {
     public class TypeTests
     {
@@ -18,9 +16,9 @@ namespace ChallengeApp.Tests
             Assert.AreNotEqual(employee1, employee2);
 
         }
-       private Employee GetEmployee(string name, string surname, int age)
+       private EmployeeInMemory GetEmployee(string name, string surname, int age)
         {
-            return new Employee(name, surname,age);
+            return new EmployeeInMemory(name, surname,age);
         }
 
         [Test]
@@ -37,9 +35,9 @@ namespace ChallengeApp.Tests
             Assert.AreEqual(employee1.Name, employee2.Name);
 
         }
-        private Employee GetEmployee1(string  name, string surname, int age)
+        private EmployeeInMemory GetEmployee1(string  name, string surname, int age)
         {
-            return new Employee(name, surname, age);
+            return new EmployeeInMemory(name, surname, age);
         }
 
         [Test]

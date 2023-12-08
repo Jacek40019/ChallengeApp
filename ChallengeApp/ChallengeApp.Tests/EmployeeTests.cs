@@ -6,7 +6,7 @@ namespace ChallengeApp.Tests
         public void WhenGetStatisticColled_ShouldReturnCorrectMax()
         {
             // arrange
-            var employee = new Employee("Lee", "Wong", 27);
+            var employee = new EmployeeInMemory("Lee", "Wong", 27);
             employee.AddGrade(5);
             employee.AddGrade(1);
             employee.AddGrade(9);
@@ -23,7 +23,7 @@ namespace ChallengeApp.Tests
         public void WhenGetStatisticColled_ShouldReturnCorrectMin()
         {
             // arrange
-            var employee = new Employee("Lee", "Wong", 27);
+            var employee = new EmployeeInMemory("Lee", "Wong", 27);
             employee.AddGrade(5);
             employee.AddGrade(1);
             employee.AddGrade(9);
@@ -42,7 +42,7 @@ namespace ChallengeApp.Tests
         public void WhenGetStatisticColled_ShouldReturnCorrectAverage()
         {
             // arrange
-            var employee = new Employee("Lee", "Wong", 27);
+            var employee = new EmployeeInMemory("Lee", "Wong", 27);
             employee.AddGrade(17);
             employee.AddGrade(83);
             employee.AddGrade(80);
@@ -61,7 +61,7 @@ namespace ChallengeApp.Tests
         public void WhenGetStatisticWithCharColled_ShouldReturnCorrectMax()
         {
             // arrange
-            var employee = new Employee("Lee", "Wong", 27);
+            var employee = new EmployeeInMemory("Lee", "Wong", 27);
             employee.AddGrade("A");
             employee.AddGrade("b");
             employee.AddGrade("c");
@@ -80,7 +80,7 @@ namespace ChallengeApp.Tests
         public void WhenGetStatisticWithCharColled_ShouldReturnCorrectMin()
         {
             // arrange
-            var employee = new Employee("Lee", "Wong", 27);
+            var employee = new EmployeeInMemory("Lee", "Wong", 27);
             employee.AddGrade("A");
             employee.AddGrade("b");
             employee.AddGrade("c");
