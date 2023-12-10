@@ -5,6 +5,12 @@ Console.WriteLine("----------------------------");
 Console.WriteLine();
 
 var employee = new EmpolyeeInFile("Kim", "Young", 27);
+employee.GradeAdded += EmployeeGradeAdded;
+
+void EmployeeGradeAdded(object sender, EventArgs args)
+{
+    Console.WriteLine("Dodano nową ocenę");
+}
 //var supervisor = new Supervisor("Lee", "Bao", 49);
 
 Console.WriteLine("Wprowadź oceny pracownika \nJeżeli chcesz zakończyć - wpisz literę q\n");

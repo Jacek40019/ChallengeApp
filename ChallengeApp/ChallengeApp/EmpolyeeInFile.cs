@@ -2,6 +2,7 @@
 {
     public class EmpolyeeInFile : EmployeeBase
     {
+        public override event GradeAddedDelegate GradeAdded;
         private const string fileName = "grades.txt";
         public EmpolyeeInFile(string name, string surname, int age)
             : base(name, surname, age)
@@ -14,7 +15,12 @@
                 using (var writer = File.AppendText(fileName))
                 {
                     writer.WriteLine(grade);
-                    Console.WriteLine($"Ocena {grade} została zapisana do pliku {fileName}");
+                                        
+                    if (GradeAdded != null)
+                    {
+                        GradeAdded(this, new EventArgs());
+                    }
+
                 }
             }
             else
