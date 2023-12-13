@@ -4,14 +4,16 @@ namespace ChallengeApp
     public abstract class EmployeeBase : IEmployee
     {
         public delegate void GradeAddedDelegate(object sender, EventArgs args);
+
         public abstract event GradeAddedDelegate GradeAdded;
 
-        public EmployeeBase(string name, string surname, int age) 
+        public EmployeeBase(string name, string surname, int age)
         {
             this.Name = name;
-            this.Surname = surname; 
+            this.Surname = surname;
             this.Age = age;
         }
+
         public string Name { get; set; }
         public string Surname { get; set; }
         public int Age { get; set; }
@@ -26,4 +28,3 @@ namespace ChallengeApp
         public abstract Statistics GetStatistic();
     }
 }
-    

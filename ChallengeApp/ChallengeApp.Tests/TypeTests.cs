@@ -14,15 +14,14 @@
 
             //assert
             Assert.AreNotEqual(employee1, employee2);
-
         }
+
        private EmployeeInMemory GetEmployee(string name, string surname, int age)
         {
             return new EmployeeInMemory(name, surname,age);
         }
 
         [Test]
-
         public void TwoTheSameStringsFromDifferentObjects_ShouldBeEqual()
         {
             // arrange
@@ -35,13 +34,13 @@
             Assert.AreEqual(employee1.Name, employee2.Name);
 
         }
+
         private EmployeeInMemory GetEmployee1(string  name, string surname, int age)
         {
             return new EmployeeInMemory(name, surname, age);
         }
 
         [Test]
-
         public void TwoTheSameSrings_ShouldBeEqual()
         {
             // arrange
@@ -53,11 +52,9 @@
 
             //assert
             Assert.AreEqual(word1, word2);
-
         }
 
         [Test]
-
         public void TwoIntsOfDifferentValue_ShouldNotBeEqual()
         {
             // arrange
@@ -68,12 +65,9 @@
 
             //assert
             Assert.AreNotEqual(number1, number2);
-
         }
 
-
         [Test]
-
         public void TwoFloatsOfDifferentValue_ShouldNotBeEqual()
         {
             // arrange
@@ -84,10 +78,7 @@
 
             //assert
             Assert.AreNotEqual(number1, number2);
-
         }
-
-
     }
 }
 

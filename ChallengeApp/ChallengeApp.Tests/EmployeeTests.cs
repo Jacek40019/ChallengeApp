@@ -16,7 +16,6 @@ namespace ChallengeApp.Tests
 
             //assert
             Assert.AreEqual(9, statistics.Max);
-
         }
 
         [Test]
@@ -34,8 +33,6 @@ namespace ChallengeApp.Tests
 
             //assert
             Assert.AreEqual(1, statistics.Min);
-
-
         }
 
         [Test]
@@ -54,9 +51,8 @@ namespace ChallengeApp.Tests
 
             //assert
             Assert.AreEqual(50, statistics.Average);
-
-
         }
+
         [Test]
         public void WhenGetStatisticWithCharColled_ShouldReturnCorrectMax()
         {
@@ -73,9 +69,8 @@ namespace ChallengeApp.Tests
 
             //assert
             Assert.AreEqual(100, statistics.Max);
-
-
         }
+
         [Test]
         public void WhenGetStatisticWithCharColled_ShouldReturnCorrectMin()
         {
@@ -92,8 +87,6 @@ namespace ChallengeApp.Tests
 
             //assert
             Assert.AreEqual(20, statistics.Min);
-
-
         }
 
     }
