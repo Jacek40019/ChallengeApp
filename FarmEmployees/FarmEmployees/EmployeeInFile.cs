@@ -8,6 +8,8 @@ namespace FarmEmployees
 {
     public class EmployeeInFile : EmployeeBase
     {
+        //public override event SalaryAddedDelegate SalaryAdded;
+
         private const string suffixFilename = "_FARMemployee.txt";
 
         private string name;
@@ -50,13 +52,18 @@ namespace FarmEmployees
             using (var writer = File.AppendText(filename))
             {
                 writer.WriteLine(salaryForFruit);
+
+                //if (SalaryAdded != null)
+                //{
+                //    SalaryAdded(this, new EventArgs());
+                //}
             }
         }
 
         public override Statistics GetStatistics()
         {
             
-            var data = new DataForCalculateion(); 
+            var data = new DataForCalculation(); 
             var statistics = new Statistics(data); 
             
             if (File.Exists($"{filename}"))

@@ -1,4 +1,6 @@
 ﻿
+using static FarmEmployees.EmployeeBase;
+
 namespace FarmEmployees
 {
     public interface IEmployee
@@ -7,6 +9,8 @@ namespace FarmEmployees
         string Surname { get; }
 
         void AddSalary(float salaryForFruit);
+
+        //event SalaryAddedDelegate SalaryAdded;
         Statistics GetStatistics();
         void ShowStatistics();
 

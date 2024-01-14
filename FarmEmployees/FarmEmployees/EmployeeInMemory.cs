@@ -9,6 +9,8 @@ namespace FarmEmployees
 {
     public class EmployeeInMemory : EmployeeBase
     {
+        //public override event SalaryAddedDelegate SalaryAdded;
+
         private List<float> salaryForFruits = new List<float>();
 
         private string name;
@@ -49,13 +51,18 @@ namespace FarmEmployees
             
             {
                 this.salaryForFruits.Add(salaryForFruit);
+
+               //if (SalaryAdded != null)
+               //{
+               //    SalaryAdded(this, new EventArgs());
+               //}
             }
         }
 
         public override Statistics GetStatistics()
         {
 
-            var data = new DataForCalculateion(); 
+            var data = new DataForCalculation(); 
             var statistics = new Statistics(data); 
 
             foreach (var salaryForFruit in this.salaryForFruits) 

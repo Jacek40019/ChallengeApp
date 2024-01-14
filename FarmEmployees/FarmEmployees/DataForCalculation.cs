@@ -1,10 +1,9 @@
 ﻿
-
 namespace FarmEmployees
 {
-    public class DataForCalculateion
+    public class DataForCalculation
     {
-        
+
         public string[] Fruits { get; } = { "Apple", "Strawberries", "Grapes", "Berries" };
         public float RateKgApple { get; private set; }
         public float RateKgStrawberries { get; private set; }
@@ -16,7 +15,7 @@ namespace FarmEmployees
 
 
 
-        public DataForCalculateion()
+        public DataForCalculation()
         {
             this.RateKgApple = 0.20f;
             this.RateKgStrawberries = 1.20f;
@@ -27,7 +26,7 @@ namespace FarmEmployees
             this.WeeklyWorkingNorm = 40f;
             this.StandardHourlyIncome = 37.57f;
         }
-      
+
         public float ParseToFloat(string weightOfFruit)
         {
 
@@ -42,7 +41,7 @@ namespace FarmEmployees
                 Console.WriteLine("to nie jest liczba");
                 Console.ResetColor();
 
-                
+
                 throw new Exception("String is not float");
             }
         }

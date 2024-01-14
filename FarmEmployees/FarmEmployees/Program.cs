@@ -1,6 +1,7 @@
 ﻿// Application for calculating payments of fruit plantation employees
 
 using FarmEmployees;
+using static FarmEmployees.EmployeeBase;
 
 Console.ForegroundColor = ConsoleColor.DarkYellow;
 Console.WriteLine("                              FarmEmployees - payroll");
@@ -11,6 +12,8 @@ Console.WriteLine("\n<i> - info. rates per kilo /  standard working time");
 Console.WriteLine("<q> - exit");
 Console.WriteLine("<any key> - enter salary data");
 Console.WriteLine("\nplease enter your choice:");
+
+
 
 
 while (true)
@@ -50,6 +53,8 @@ while (true)
 
     }
 }
+Console.WriteLine("### Thank you for using my App ###");
+
 
 void AddDataToFile()
 {
@@ -59,6 +64,7 @@ void AddDataToFile()
     Console.WriteLine("Enter the employee's surname:");
     var surname = Console.ReadLine();
     var employee = new EmployeeInFile(name, surname);
+    //employee.SalaryAdded += InputSalaryData;
 
     InputSalaryData(employee);
     employee.GetStatistics();
@@ -66,6 +72,11 @@ void AddDataToFile()
 
 
 }
+
+//void InputSalaryData(object sender, EventArgs args)
+//{
+//    throw new NotImplementedException();
+//}
 
 void AddDataToMemory()
 {
@@ -75,6 +86,7 @@ void AddDataToMemory()
     Console.WriteLine("Enter the employee's surname:");
     var surname = Console.ReadLine();
     var employee = new EmployeeInMemory(name, surname);
+    //employee.SalaryAdded += InputSalaryData;
 
     InputSalaryData(employee);
     employee.GetStatistics();
@@ -83,11 +95,12 @@ void AddDataToMemory()
 }
 
 
+
 void InputSalaryData(IEmployee employee)
 {
 
-    var calculateSalary = new DataForCalculateion();
-    Console.WriteLine("Enter the weight of the harvested fruit in kilograms (e.g. 7,82) ");
+    var calculateSalary = new DataForCalculation();
+    Console.WriteLine("\nEnter the weight of the harvested fruit in kilograms (e.g. 7,82) ");
 
     foreach (var fruit in calculateSalary.Fruits)
     {
@@ -130,7 +143,7 @@ void InputSalaryData(IEmployee employee)
 
 void PrintInfo()
 {
-    var printInfo = new DataForCalculateion();
+    var printInfo = new DataForCalculation();
 
     Console.ForegroundColor = ConsoleColor.DarkYellow;
     Console.WriteLine("------------------------------------ Salary information ------------------------------------");
